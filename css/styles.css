@@ -105,3 +105,37 @@ body {
 .sidebar {
   grid-area: sidebar;
 }
+
+/* animation */
+
+.square-wrapper {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation: rotateColor 5s linear infinite;
+}
+
+@keyframes rotateColor {
+  0% {
+    transform: rotate(0deg);
+    background-color: red;
+  }
+  50% {
+    transform: rotate(180deg);
+    background-color: orange;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: green;
+  }
+}
