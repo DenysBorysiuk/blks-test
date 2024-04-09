@@ -1,8 +1,9 @@
 import Link from 'next/link';
 
 import { UserAuth } from '@/context/AuthContext';
+
 import UserMenu from '@/components/UserMenu';
-import AuthNav from '../AuthNav';
+import AuthNav from '@/components/AuthNav';
 
 const Navbar = () => {
   const { user } = UserAuth();
