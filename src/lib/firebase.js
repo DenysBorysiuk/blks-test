@@ -5,13 +5,14 @@ import { getAuth } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: 'AIzaSyC5HuBhhjTuM42rbRCedGb3DlHJtERt54I',
-  authDomain: 'blks-test.firebaseapp.com',
-  projectId: 'blks-test',
-  storageBucket: 'blks-test.appspot.com',
-  messagingSenderId: '731269480317',
-  appId: '1:731269480317:web:f4f86fafe24d49ac081614',
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROTECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
