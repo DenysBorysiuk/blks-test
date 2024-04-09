@@ -25,7 +25,7 @@ const Auth = () => {
   }, [user]);
 
   return user ? null : (
-    <div className="container flex flex-col justify-center items-center h-[calc(100vh-70px)] gap-7">
+    <div className="container flex justify-center items-center h-[calc(100vh-70px)]">
       <button
         className="icon border flex items-center gap-2 px-4 py-2 font-medium"
         onClick={handleSignIn}
