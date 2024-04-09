@@ -1,25 +1,11 @@
 import Link from 'next/link';
 
 import { UserAuth } from '@/context/AuthContext';
+import UserMenu from '@/components/UserMenu';
+import AuthNav from '../AuthNav';
 
 const Navbar = () => {
-  const { user, googleSignIn, logOut } = UserAuth();
-
-  const handleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleSignOut = async () => {
-    try {
-      await logOut();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { user } = UserAuth();
 
   return (
     <header className="container border-b-[1px] border-black">
@@ -29,32 +15,14 @@ const Navbar = () => {
             <Link href="/">Home</Link>
           </li>
 
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-
           {!user ? null : (
             <li>
-              <Link href="/profile">Profile</Link>
+              <Link href="/dashboard">Dashboard</Link>
             </li>
           )}
         </ul>
 
-        {!user ? (
-          <ul className="flex items-center gap-6">
-            <li onClick={handleSignIn}>Login</li>
-
-            <li onClick={handleSignIn}>SignUp</li>
-          </ul>
-        ) : (
-          <div>
-            <p>Welcome, {user.displayName}</p>
-
-            <button type="button" onClick={handleSignOut}>
-              Sign Out
-            </button>
-          </div>
-        )}
+        {!user ? <AuthNav /> : <UserMenu />}
       </nav>
     </header>
   );

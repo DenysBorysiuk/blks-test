@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 
 import { UserAuth } from '@/context/AuthContext';
 
-const Profile = () => {
+const Dashboard = () => {
   const { user } = UserAuth();
 
   useEffect(() => {
@@ -25,4 +25,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Dashboard;
