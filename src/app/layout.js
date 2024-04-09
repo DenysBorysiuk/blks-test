@@ -1,6 +1,7 @@
 'use client';
 
 import { Inter } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 import { AuthContextProvider } from '@/context/AuthContext';
 import Navbar from '@/components/Navbar';
@@ -22,6 +23,8 @@ export default function RootLayout({ children }) {
           <Navbar />
 
           <main>{children}</main>
+
+          <Toaster />
         </AuthContextProvider>
       </body>
     </html>

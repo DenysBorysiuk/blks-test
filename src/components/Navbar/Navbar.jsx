@@ -12,12 +12,16 @@ const Navbar = () => {
       <nav className="flex justify-between">
         <ul className="flex gap-6 h-16 items-center">
           <li>
-            <Link href="/">Home</Link>
+            <Link className="link" href="/">
+              Home
+            </Link>
           </li>
 
           {!user ? null : (
             <li>
-              <Link href="/dashboard">Dashboard</Link>
+              <Link className="link" href="/dashboard">
+                Dashboard
+              </Link>
             </li>
           )}
         </ul>

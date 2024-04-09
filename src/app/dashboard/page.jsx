@@ -14,11 +14,7 @@ const Dashboard = () => {
     }
   }, [user]);
 
-  if (!user) {
-    return null;
-  }
-
-  return (
+  return !user ? null : (
     <div className="container">
       <h1>Dashboard</h1>
     </div>
